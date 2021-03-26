@@ -7,10 +7,11 @@ export const ServerCardWrapper = styled(motion.div)`
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
+    height: 100%;
 `
 
 export const ServerCardItem = styled(motion.div)`
-	background-color: white;
+	background-color: #fafafa;
 	padding: 20px;
 	margin-bottom: 20px;
 	cursor: pointer;

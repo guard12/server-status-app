@@ -1,14 +1,27 @@
 
 import styled from 'styled-components'
-import { ServerCard } from '../src/components/server-card'
+import { motion } from 'framer-motion'
+import Link from "next/link"
 
-const Title = styled.h1`
+import { Navbar } from '../src/components/navbar'
+
+const Title = styled(motion.h1)`
 	color: ${({ theme }) => theme.colors.primary};
+`
+
+const Button = styled.button`
+
 `
 
 export default function HomePage() {
 	return <>
-	<Title>Hello Server</Title>
-	<ServerCard/>
+	<Navbar />
+	<Title
+		layoutId="title"
+		initial={{ scale: 0.8, opacity: 0 }}
+  		animate={{ scale: 1, opacity: 1 }}
+	>
+		Hello Server
+	</Title>
 	</>
 }
