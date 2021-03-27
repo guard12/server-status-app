@@ -1,4 +1,4 @@
-import { NavBarWrapper, NavBarComponent, StyledLink, Links } from '../styles'
+import { NavBarWrapper, NavBarComponent, StyledLink, Links } from '../../styles'
 import Link from 'next/link'
 
 export const Navbar = () => {

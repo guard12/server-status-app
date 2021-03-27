@@ -1,14 +1,10 @@
 
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/page/layout'
 
 const Title = styled(motion.h1)`
 	color: ${({ theme }) => theme.colors.secondary};
-`
-
-const Button = styled.button`
-
 `
 
 export default function HomePage() {
