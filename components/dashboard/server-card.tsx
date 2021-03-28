@@ -16,21 +16,6 @@ export function ServerCard({ server, onClick }) {
         loadMap()
     }, [])
 
-    /*useEffect(() => {
-        const loader = new Loader({
-            apiKey: "AIzaSyByGzB_ekITVW1ZbSONQFQvgjjnqhIlgk0",
-            version: "weekly",
-        })
-    
-        loader.load().then(() => {
-            googleMapRef.current = new google.maps.Map(googleMapRef.current as HTMLElement, {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            })
-        })
-        .then(() => setIsMapLoaded(true))
-    }, [])*/
-
     return (
       <SingleServerContainer>
         <SingleServerStyled
