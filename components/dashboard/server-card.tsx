@@ -10,7 +10,7 @@ export function ServerCard({ server, onClick }) {
 		const loadMap = async () => {
 			await serverLocation(googleMapRef, server.location)
 		}
-		//loadMap()
+		loadMap()
 	}, [])
 
 	return (
