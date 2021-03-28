@@ -1,10 +1,17 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import styled from 'styled-components'
+
 import { Navbar } from './navbar'
 import { Footer } from './footer'
 
+const Page = styled.div`
+    background: ${({ theme }) => theme.colors.primary};
+    height: 100%;
+`
+
 export const Layout = ({ children, title }) => {
-    return <>
+    return <Page>
         <Head>
             <title>{title}</title>
             <meta charSet="utf-8" />
@@ -16,5 +23,5 @@ export const Layout = ({ children, title }) => {
         {children}
         
         <Footer />
-    </>
+    </Page>
 }

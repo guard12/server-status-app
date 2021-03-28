@@ -1,37 +1,38 @@
-import React, { useRef, useEffect, useState } from 'react'
-import { Loader } from "@googlemaps/js-api-loader"
+import React, { useRef, useEffect } from 'react'
 
-import { SingleServerContainer, SingleServerStyled } from './styles'
-import { serverLocation } from './server-location'
+import { SingleServerContainer, SingleServerStyled, GoogleMap, SingleServerDetail, SingleServerDetailSpan } from './styles'
+import { serverLocation } from '../../api/google-maps'
 
 export function ServerCard({ server, onClick }) {
-    const [isMapLoaded, setIsMapLoaded] = useState(false)
-    let googleMapRef = useRef(null)
+	let googleMapRef = useRef(null)
 
-    useEffect(() => {
-        const loadMap = async () => {
-            await serverLocation(googleMapRef, server.location)
-                .then(() => setIsMapLoaded(true))
-        }
-        loadMap()
-    }, [])
+	useEffect(() => {
+		const loadMap = async () => {
+			await serverLocation(googleMapRef, server.location)
+		}
+		//loadMap()
+	}, [])
 
-    return (
-      <SingleServerContainer>
-        <SingleServerStyled
-          layoutId={server.id}
-        >
-          <div>{server.name}</div>
-          <div>{server.avgUptime}</div>
-          <div>{server.status}</div>
-          <div>{server.ip}</div>
-          <div>{server.id}</div>
-          <div>{server.lastSeen}</div>
-          <div>{server.lastMessage}</div>
-          <div>{server.location}</div>
-          <div ref={googleMapRef} style={{ width: '1280px', height: '400px' }}/>
-          <button onClick={onClick}>Close</button>
-        </SingleServerStyled>
-      </SingleServerContainer>
-    )
+	return (
+	  <SingleServerContainer exit={{ opacity: 0 }}>
+		<SingleServerStyled
+		  layoutId={server.id}
+		>
+		<SingleServerDetail>
+			<SingleServerDetailSpan>Name:</SingleServerDetailSpan> {server.name}
+			<SingleServerDetailSpan>Average uptime:</SingleServerDetailSpan> {server.avgUptime}
+			<SingleServerDetailSpan>Status:</SingleServerDetailSpan> {server.status}
+			<SingleServerDetailSpan>IP address:</SingleServerDetailSpan> {server.ip}
+		</SingleServerDetail>
+		<SingleServerDetail>
+			<SingleServerDetailSpan>ID:</SingleServerDetailSpan>{server.id}
+			<SingleServerDetailSpan>Last seen:</SingleServerDetailSpan> {server.lastSeen}
+			<SingleServerDetailSpan>Last message:</SingleServerDetailSpan> {server.lastMessage}
+			<SingleServerDetailSpan>Location:</SingleServerDetailSpan> {server.location}
+		</SingleServerDetail>
+		<GoogleMap ref={googleMapRef}/>
+		<button onClick={onClick}>Close</button>
+		</SingleServerStyled>
+	  </SingleServerContainer>
+	)
   }

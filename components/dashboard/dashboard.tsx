@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { DashboardWrappper, PageHeader } from './styles'
 import { ServersOverview } from './servers-overview'

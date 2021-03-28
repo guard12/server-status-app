@@ -68,5 +68,15 @@ const servers: Server[] = [
 		lastSeen: "14:00",
 		lastMessage: "exploding",
 		location: "Boca Chica",
+	},
+	{
+		id: "4",
+		name: "server 4",
+		avgUptime: "55hrs",
+		status: "panic",
+		ip: "192.168.3.777",
+		lastSeen: "19:00",
+		lastMessage: "exploding in 3..2..",
+		location: "Boca Chica",
 	}
 ]
