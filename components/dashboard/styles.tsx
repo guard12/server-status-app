@@ -62,12 +62,16 @@ export const SingleServerStyled = styled(motion.div)`
 	min-width: 300px;
 	flex-grow: 1;
 `
-export const SingleServerDetail = styled.div`
-	display: block;
+export const SingleServerDetailWrapper = styled.div`
+	display: flex;
 `
 
-export const SingleServerDetailSpan = styled.div`
-	font-weight: 800;
+export const SingleServerDetail = styled.div`
+	flex: 1 0 25%;
+`
+
+export const SingleServerDetailBlock = styled.div`
+	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
 export const DashboardWrappper = styled.div`
@@ -109,4 +113,15 @@ export const GoogleMap = styled.div`
 	min-width: 300px;
 	height: 400px;
 	display: flex;
+`
+
+export const ClosePopupButton = styled.div`
+	color: ${({ theme }) => theme.colors.primary};
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	text-align: right;
+	&:hover {
+		color: ${({ theme }) => theme.colors.hoverColor};
+	}
 `

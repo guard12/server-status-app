@@ -1,7 +1,12 @@
 import React, { useRef, useEffect } from 'react'
 
-import { SingleServerContainer, SingleServerStyled, GoogleMap, SingleServerDetail, SingleServerDetailSpan } from './styles'
+import { 
+	SingleServerContainer, SingleServerStyled, GoogleMap, 
+	SingleServerDetail, SingleServerDetailBlock, SingleServerDetailWrapper,
+	ClosePopupButton
+} from './styles'
 import { serverLocation } from '../../api/google-maps'
+import { TimesIcon } from '../icons/times-icon'
 
 export function ServerCard({ server, onClick }) {
 	let googleMapRef = useRef(null)
@@ -18,20 +23,26 @@ export function ServerCard({ server, onClick }) {
 		<SingleServerStyled
 		  layoutId={server.id}
 		>
-		<SingleServerDetail>
-			<SingleServerDetailSpan>Name:</SingleServerDetailSpan> {server.name}
-			<SingleServerDetailSpan>Average uptime:</SingleServerDetailSpan> {server.avgUptime}
-			<SingleServerDetailSpan>Status:</SingleServerDetailSpan> {server.status}
-			<SingleServerDetailSpan>IP address:</SingleServerDetailSpan> {server.ip}
-		</SingleServerDetail>
-		<SingleServerDetail>
-			<SingleServerDetailSpan>ID:</SingleServerDetailSpan>{server.id}
-			<SingleServerDetailSpan>Last seen:</SingleServerDetailSpan> {server.lastSeen}
-			<SingleServerDetailSpan>Last message:</SingleServerDetailSpan> {server.lastMessage}
-			<SingleServerDetailSpan>Location:</SingleServerDetailSpan> {server.location}
-		</SingleServerDetail>
+		<ClosePopupButton onClick={onClick}><TimesIcon /></ClosePopupButton>
+		<SingleServerDetailWrapper>
+			<SingleServerDetail>
+				<SingleServerDetailBlock><strong>Name: </strong>{server.name}</SingleServerDetailBlock>
+				<SingleServerDetailBlock><strong>Average uptime: </strong>{server.avgUptime}</SingleServerDetailBlock>
+			</SingleServerDetail>
+			<SingleServerDetail>
+				<SingleServerDetailBlock><strong>Status: </strong>{server.status}</SingleServerDetailBlock>
+				<SingleServerDetailBlock><strong>IP address: </strong>{server.ip}</SingleServerDetailBlock>
+			</SingleServerDetail>
+			<SingleServerDetail>
+				<SingleServerDetailBlock><strong>ID: </strong>{server.id}</SingleServerDetailBlock>
+				<SingleServerDetailBlock><strong>Last seen: </strong>{server.lastSeen}</SingleServerDetailBlock>
+			</SingleServerDetail>
+			<SingleServerDetail>
+				<SingleServerDetailBlock><strong>Last message: </strong>{server.lastMessage}</SingleServerDetailBlock>
+				<SingleServerDetailBlock><strong>Location: </strong>{server.location}</SingleServerDetailBlock>
+			</SingleServerDetail>
+		</SingleServerDetailWrapper>
 		<GoogleMap ref={googleMapRef}/>
-		<button onClick={onClick}>Close</button>
 		</SingleServerStyled>
 	  </SingleServerContainer>
 	)

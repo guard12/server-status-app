@@ -22,6 +22,7 @@ const lightTheme = {
         secondary: '#242423',
         background: '#fff',
         borderColor: '#eaeaea',
+        hoverColor: '#e2dddd'
     },
     spacing: { ...spacing },
 }
