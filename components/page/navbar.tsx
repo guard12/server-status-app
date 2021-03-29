@@ -1,17 +1,18 @@
-import { NavBarWrapper, NavBarComponent, StyledLink, Links } from '../../styles'
+import { NavBarWrapper, NavBarComponent, StyledLink, Links } from './styles'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export const Navbar = () => {
+    const { pathname } = useRouter()
+
     return <NavBarWrapper>
         <NavBarComponent>
-            <Links>
                 <Link href='/' passHref>
-                    <StyledLink>Admin</StyledLink>
+                    <StyledLink active={pathname === '/'}>Home</StyledLink>
                 </Link>
                 <Link href='/dashboard' passHref>
-                    <StyledLink>Dashboard</StyledLink>
+                    <StyledLink active={pathname === '/dashboard'}>Dashboard</StyledLink>
                 </Link>
-            </Links>
         </NavBarComponent>
     </NavBarWrapper>
 }

@@ -8,16 +8,20 @@ const spacing = {
 
 const darkTheme = {
     colors: {
-      primary: '#312F2F',
+      primary: '#242423',
       secondary: '#fff',
+      background: '#312F2F',
+      borderColor: '#eaeaea',
     },
     spacing: { ...spacing },
 }
 
 const lightTheme = {
     colors: {
-        primary: '#FDFFFC',
-        secondary: '#312F2F',
+        primary: '#fafafa',
+        secondary: '#242423',
+        background: '#fff',
+        borderColor: '#eaeaea',
     },
     spacing: { ...spacing },
 }

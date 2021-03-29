@@ -17,7 +17,7 @@ export const ServerItem = styled(motion.li)`
 	padding: 20px;
 	cursor: pointer;
 	margin: 20px 0 0 20px;
-	flex: 1 1 100px;
+	flex: 1 1 20%;
 	display: flex;
 	background: ${({ theme }) => theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.primary};

@@ -1,7 +1,7 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { AnimateSharedLayout } from "framer-motion"
 
-import { darkTheme, lightTheme } from '../styles/theme'
+import { darkTheme, lightTheme } from '../themes/theme'
 
 const GlobalStyle = createGlobalStyle`
   body {

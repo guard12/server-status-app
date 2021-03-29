@@ -7,5 +7,7 @@ export function Dashboard() {
 	return <DashboardWrappper>
         <PageHeader>Dashboard</PageHeader>
         <ServersOverview />
+
+        <PageHeader>Custom Servers</PageHeader>
     </DashboardWrappper>
 }
