@@ -2,23 +2,27 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { ServerState } from '../../types/server'
 
+export const DashboardWrappper = styled.div`
+    display: flex;
+    padding: ${({ theme }) => theme.spacing.xl};
+    justify-content: center;
+    flex-direction: column;
+`
+
 export const ServerContainer = styled.ul`
-	margin: 0;
-	padding: 0 20px 20px 0;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: space-between;
 	list-style: none;
+	padding: 0;
 `
 
 export const ServerItem = styled(motion.li)`
+	display: flex;
+	margin: 10px 10px 0 0;
 	border-radius: 10px;
 	padding: 20px;
 	cursor: pointer;
-	margin: 20px 0 0 20px;
-	flex: 1 1 20%;
-	display: flex;
+	flex: 1 0 20%;
 	background: ${({ theme }) => theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.primary};
 `
@@ -89,13 +93,6 @@ export const SingleServerDetailTitle = styled.div`
 	font-size: 18px;
 `
 
-export const DashboardWrappper = styled.div`
-    display: flex;
-    padding: ${({ theme }) => theme.spacing.md};
-    justify-content: center;
-    flex-direction: column;
-`
-
 export const PageHeader = styled.h1`
     align-self: center;
 	color: ${({ theme }) => theme.colors.secondary};
@@ -117,6 +114,8 @@ export const Status = styled.div<StatusProps>`
 			case "panic":
 				return "#940"
 			case "unavailable":
+				return "#A90"
+			default:
 				return "#A90"
 		}
 	}};

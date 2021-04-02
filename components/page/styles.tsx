@@ -35,8 +35,8 @@ export const StyledLink = styled.div<StyledLinkProps>`
 	display: flex;
 	align-items: center;
     &:hover {
-        background-color: ${({ theme }) => theme.colors.secondary};
-        color: ${({ theme }) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.colors.hoverColor};
+        color: ${({ theme }) => theme.colors.secondary};
     }
 `
 
