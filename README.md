@@ -15,6 +15,7 @@ App which displays the status of various servers
 # Tech stack
 - Next.js (react)
 - Typescript
+- easy-peasy (state management)
 - styled-components
 - framer-motion
 - swr (data fetching)

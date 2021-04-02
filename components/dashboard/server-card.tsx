@@ -3,10 +3,9 @@ import React, { useRef, useEffect } from 'react'
 import { 
 	SingleServerContainer, SingleServerStyled, GoogleMap, 
 	SingleServerDetail, SingleServerDetailBlock, SingleServerDetailWrapper,
-	ClosePopupButton
+	ClosePopupButton, StyledPopupTitle, SingleServerDetailTitle
 } from './styles'
 import { serverLocation } from '../../api/google-maps'
-import { TimesIcon } from '../icons/times-icon'
 
 export function ServerCard({ server, onClick }) {
 	let googleMapRef = useRef(null)
@@ -23,26 +22,56 @@ export function ServerCard({ server, onClick }) {
 		<SingleServerStyled
 		  layoutId={server.id}
 		>
-		<ClosePopupButton onClick={onClick}><TimesIcon /></ClosePopupButton>
-		<SingleServerDetailWrapper>
-			<SingleServerDetail>
-				<SingleServerDetailBlock><strong>Name: </strong>{server.name}</SingleServerDetailBlock>
-				<SingleServerDetailBlock><strong>Average uptime: </strong>{server.avgUptime}</SingleServerDetailBlock>
-			</SingleServerDetail>
-			<SingleServerDetail>
-				<SingleServerDetailBlock><strong>Status: </strong>{server.status}</SingleServerDetailBlock>
-				<SingleServerDetailBlock><strong>IP address: </strong>{server.ip}</SingleServerDetailBlock>
-			</SingleServerDetail>
-			<SingleServerDetail>
-				<SingleServerDetailBlock><strong>ID: </strong>{server.id}</SingleServerDetailBlock>
-				<SingleServerDetailBlock><strong>Last seen: </strong>{server.lastSeen}</SingleServerDetailBlock>
-			</SingleServerDetail>
-			<SingleServerDetail>
-				<SingleServerDetailBlock><strong>Last message: </strong>{server.lastMessage}</SingleServerDetailBlock>
-				<SingleServerDetailBlock><strong>Location: </strong>{server.location}</SingleServerDetailBlock>
-			</SingleServerDetail>
-		</SingleServerDetailWrapper>
-		<GoogleMap ref={googleMapRef}/>
+			<div>
+				<ClosePopupButton onClick={onClick}>&times;</ClosePopupButton>
+				<StyledPopupTitle>Server details</StyledPopupTitle>
+			</div>
+			<SingleServerDetailWrapper>
+				<SingleServerDetail>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Name:</SingleServerDetailTitle>
+						{server.name}
+					</SingleServerDetailBlock>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Average uptime: </SingleServerDetailTitle>
+						{server.avgUptime}
+					</SingleServerDetailBlock>
+				</SingleServerDetail>
+				<SingleServerDetail>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Status: </SingleServerDetailTitle>
+						{server.status}
+					</SingleServerDetailBlock>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>IP address: </SingleServerDetailTitle>
+						{server.ip}
+					</SingleServerDetailBlock>
+				</SingleServerDetail>
+				<SingleServerDetail>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>ID: </SingleServerDetailTitle>
+						{server.id}
+					</SingleServerDetailBlock>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Last seen: </SingleServerDetailTitle>
+						{server.lastSeen}
+					</SingleServerDetailBlock>
+				</SingleServerDetail>
+				<SingleServerDetail>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Last message: </SingleServerDetailTitle>
+						{server.lastMessage}
+					</SingleServerDetailBlock>
+					<SingleServerDetailBlock>
+						<SingleServerDetailTitle>Location: </SingleServerDetailTitle>
+						{server.location}
+					</SingleServerDetailBlock>
+				</SingleServerDetail>
+			</SingleServerDetailWrapper>
+
+			<StyledPopupTitle>Server location</StyledPopupTitle>
+
+			<GoogleMap ref={googleMapRef}/>
 		</SingleServerStyled>
 	  </SingleServerContainer>
 	)

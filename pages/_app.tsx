@@ -1,6 +1,8 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { AnimateSharedLayout } from "framer-motion"
+import { StoreProvider } from 'easy-peasy'
 
+import { store } from '../store/store' 
 import { darkTheme, lightTheme } from '../themes/theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -22,7 +24,9 @@ export default function App({ Component, pageProps }) {
 		<AnimateSharedLayout>
 			<GlobalStyle />
 			<ThemeProvider theme={lightTheme}>
-				<Component {...pageProps} />
+				<StoreProvider store={store}>
+					<Component {...pageProps} />
+				</StoreProvider>
 			</ThemeProvider>
 		</AnimateSharedLayout>
 	)

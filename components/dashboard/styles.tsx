@@ -47,23 +47,32 @@ export const Overlay = styled(motion.div)`
 `
 
 export const SingleServerContainer = styled(motion.div)`
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	background: transparent;
+	transform: translate(-50%, -50%);
+	max-width: 1280px;
+	min-width: 300px;
 `
 
 export const SingleServerStyled = styled(motion.div)`
 	border-radius: 20px;
 	background: ${({ theme }) => theme.colors.secondary};
 	color: ${({ theme }) => theme.colors.primary};
-    padding: ${({ theme }) => theme.spacing.md};
+    padding: ${({ theme }) => theme.spacing.xl};
 	z-index: 50;
 	max-width: 1280px;
 	min-width: 300px;
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 `
 export const SingleServerDetailWrapper = styled.div`
 	display: flex;
+	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
 export const SingleServerDetail = styled.div`
@@ -72,6 +81,12 @@ export const SingleServerDetail = styled.div`
 
 export const SingleServerDetailBlock = styled.div`
 	margin: ${({ theme }) => theme.spacing.md} 0;
+`
+
+export const SingleServerDetailTitle = styled.div`
+	margin-bottom: ${({ theme }) => theme.spacing.xs};
+	font-weight: bold;
+	font-size: 18px;
 `
 
 export const DashboardWrappper = styled.div`
@@ -113,15 +128,23 @@ export const GoogleMap = styled.div`
 	min-width: 300px;
 	height: 400px;
 	display: flex;
+	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
-export const ClosePopupButton = styled.div`
+export const ClosePopupButton = styled.span`
 	color: ${({ theme }) => theme.colors.primary};
 	cursor: pointer;
-	border: none;
-	background: transparent;
-	text-align: right;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 	&:hover {
 		color: ${({ theme }) => theme.colors.hoverColor};
 	}
+`
+
+export const StyledPopupTitle = styled.div`
+	color: ${({ theme }) => theme.colors.primary};
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
 `
