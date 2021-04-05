@@ -6,11 +6,13 @@ App which displays the status of various servers
 
 # How to run
 
-1. run npm install 
-2. run npm run dev (frontend)
-3. cd /node-server
-4. node server.js
-5. Enjoy :)
+1. npm run install 
+2. npm run dev (frontend)
+3. Enjoy :)
+
+# How to run tests
+
+1. npm run test
 
 # Tech stack
 - Next.js (react)
@@ -21,3 +23,8 @@ App which displays the status of various servers
 - swr (data fetching)
 - Node (tiny server)
 - google maps api - (You will need a key)
+
+# Tests stack
+- Mocha
+- Enzyme
+- Chai

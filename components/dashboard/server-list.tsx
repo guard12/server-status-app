@@ -11,7 +11,7 @@ export function ServerList({ items, setSelectedId }) {
 					onClick={() => setSelectedId(server.id)}
 					layoutId={server.id}
 				>
-				<div style={{ display: 'flex'}}>
+				<div style={{ display: "flex"}}>
 					<ServerIcon />
 					<ServerItemContentStyled>
 						<ServerItemContentDetailStyled><strong>Name:</strong> {server.name}</ServerItemContentDetailStyled>
