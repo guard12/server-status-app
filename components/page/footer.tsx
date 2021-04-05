@@ -1,5 +1,6 @@
-import { StyledFooter } from './styles'
+import React from 'react'
+import { FooterStyled } from './styles'
 
 export const Footer = () => {
-    return <StyledFooter>Created by Matus Kollarcik</StyledFooter>
+    return <FooterStyled>Created by Matus Kollarcik</FooterStyled>
 }

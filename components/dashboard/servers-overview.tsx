@@ -5,7 +5,7 @@ import { useStoreState } from '../../store/hooks'
 //import { fetcher } from '../../api/fetcher'
 //import { Server } from '../../types/server'
 
-import { Overlay } from './styles'
+import { OverlayStyled } from './styles'
 import { ServerList } from './server-list'
 import { ServerCard } from './server-card'
 
@@ -14,8 +14,8 @@ export function ServersOverview() {
 	const { data , error } = useSWR("http://localhost:2020/get-overview", fetcher, { revalidateOnFocus: false, refreshInterval: 10000})
 	if(error) return <div>Failed to load the servers</div>
 	if(!data) return <div>Loading...</div>
-	
 	const servers: Server[] = data.servers*/
+	
 	const [selectedId, setSelectedId] = useState(null)
 	const servers = useStoreState(state => state.servers)
 	const selectedServer = servers.find(server => server.id === selectedId)
@@ -24,7 +24,7 @@ export function ServersOverview() {
 		<ServerList items={servers} setSelectedId={setSelectedId} />
 		<AnimatePresence>
 		  {selectedId != null && (
-			<Overlay
+			<OverlayStyled
 				key="overlay"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 0.6 }}

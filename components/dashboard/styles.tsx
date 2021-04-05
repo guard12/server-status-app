@@ -2,21 +2,21 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { ServerState } from '../../types/server'
 
-export const DashboardWrappper = styled.div`
+export const DashboardWrappperStyled = styled.div`
     display: flex;
     padding: ${({ theme }) => theme.spacing.xl};
     justify-content: center;
     flex-direction: column;
 `
 
-export const ServerContainer = styled.ul`
+export const ServerContainerStyled = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
 	list-style: none;
 	padding: 0;
 `
 
-export const ServerItem = styled(motion.li)`
+export const ServerItemStyled = styled(motion.li)`
 	display: flex;
 	margin: 10px 10px 0 0;
 	border-radius: 10px;
@@ -27,18 +27,18 @@ export const ServerItem = styled(motion.li)`
 	color: ${({ theme }) => theme.colors.primary};
 `
 
-export const ServerItemContent = styled.div`
+export const ServerItemContentStyled = styled.div`
 	margin-left: ${({ theme }) => theme.spacing.md};
 	display: flex;
 	flex-wrap: wrap;
 	flex-shrink: 2;
 `
 
-export const ServerItemContentDetail = styled.div`
+export const ServerItemContentDetailStyled = styled.div`
 	flex: 1 0 100%;
 `
 
-export const Overlay = styled(motion.div)`
+export const OverlayStyled = styled(motion.div)`
 	background: ${({ theme }) => theme.colors.primary};;
 	opacity: 0.2;
 	position: fixed;
@@ -50,7 +50,7 @@ export const Overlay = styled(motion.div)`
   	will-change: opacity;
 `
 
-export const SingleServerContainer = styled(motion.div)`
+export const SingleServerContainerStyled = styled(motion.div)`
 	position: fixed;
 	z-index: 1000;
 	left: 50%;
@@ -74,26 +74,26 @@ export const SingleServerStyled = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 `
-export const SingleServerDetailWrapper = styled.div`
+export const SingleServerDetailWrapperStyled = styled.div`
 	display: flex;
 	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
-export const SingleServerDetail = styled.div`
+export const SingleServerDetailStyled = styled.div`
 	flex: 1 0 25%;
 `
 
-export const SingleServerDetailBlock = styled.div`
+export const SingleServerDetailBlockStyled = styled.div`
 	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
-export const SingleServerDetailTitle = styled.div`
+export const SingleServerDetailTitleStyled = styled.div`
 	margin-bottom: ${({ theme }) => theme.spacing.xs};
 	font-weight: bold;
 	font-size: 18px;
 `
 
-export const PageHeader = styled.h1`
+export const PageHeaderStyled = styled.h1`
     align-self: center;
 	color: ${({ theme }) => theme.colors.secondary};
 `
@@ -102,7 +102,7 @@ interface StatusProps {
 	readonly status: ServerState
 }
 
-export const Status = styled.div<StatusProps>`
+export const StatusStyled = styled.div<StatusProps>`
 	width: 10px;
     height: 10px;
     background-color: ${props => {
@@ -123,14 +123,14 @@ export const Status = styled.div<StatusProps>`
 	margin: 0px 5px;
 `
 
-export const GoogleMap = styled.div`
+export const GoogleMapStyled = styled.div`
 	min-width: 300px;
 	height: 400px;
 	display: flex;
 	margin: ${({ theme }) => theme.spacing.md} 0;
 `
 
-export const ClosePopupButton = styled.span`
+export const ClosePopupButtonStyled = styled.span`
 	color: ${({ theme }) => theme.colors.primary};
 	cursor: pointer;
 	float: right;
@@ -141,7 +141,7 @@ export const ClosePopupButton = styled.span`
 	}
 `
 
-export const StyledPopupTitle = styled.div`
+export const PopupTitleStyled = styled.div`
 	color: ${({ theme }) => theme.colors.primary};
 	text-align: center;
 	font-size: 28px;

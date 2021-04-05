@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react'
 
 import { 
-	SingleServerContainer, SingleServerStyled, GoogleMap, 
-	SingleServerDetail, SingleServerDetailBlock, SingleServerDetailWrapper,
-	ClosePopupButton, StyledPopupTitle, SingleServerDetailTitle
+	SingleServerContainerStyled, SingleServerStyled, GoogleMapStyled, 
+	SingleServerDetailStyled, SingleServerDetailBlockStyled, SingleServerDetailWrapperStyled,
+	ClosePopupButtonStyled, PopupTitleStyled, SingleServerDetailTitleStyled
 } from './styles'
 import { serverLocation } from '../../api/google-maps'
 
@@ -18,61 +18,61 @@ export function ServerCard({ server, onClick }) {
 	}, [])
 
 	return (
-	  <SingleServerContainer exit={{ opacity: 0 }}>
+	  <SingleServerContainerStyled exit={{ opacity: 0 }}>
 		<SingleServerStyled
 		  layoutId={server.id}
 		>
 			<div>
-				<ClosePopupButton onClick={onClick}>&times;</ClosePopupButton>
-				<StyledPopupTitle>Server details</StyledPopupTitle>
+				<ClosePopupButtonStyled onClick={onClick}>&times;</ClosePopupButtonStyled>
+				<PopupTitleStyled>Server details</PopupTitleStyled>
 			</div>
-			<SingleServerDetailWrapper>
-				<SingleServerDetail>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Name:</SingleServerDetailTitle>
+			<SingleServerDetailWrapperStyled>
+				<SingleServerDetailStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Name:</SingleServerDetailTitleStyled>
 						{server.name}
-					</SingleServerDetailBlock>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Average uptime: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Average uptime: </SingleServerDetailTitleStyled>
 						{server.avgUptime}
-					</SingleServerDetailBlock>
-				</SingleServerDetail>
-				<SingleServerDetail>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Status: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+				</SingleServerDetailStyled>
+				<SingleServerDetailStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Status: </SingleServerDetailTitleStyled>
 						{server.status}
-					</SingleServerDetailBlock>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>IP address: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>IP address: </SingleServerDetailTitleStyled>
 						{server.ip}
-					</SingleServerDetailBlock>
-				</SingleServerDetail>
-				<SingleServerDetail>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>ID: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+				</SingleServerDetailStyled>
+				<SingleServerDetailStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>ID: </SingleServerDetailTitleStyled>
 						{server.id}
-					</SingleServerDetailBlock>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Last seen: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Last seen: </SingleServerDetailTitleStyled>
 						{server.lastSeen}
-					</SingleServerDetailBlock>
-				</SingleServerDetail>
-				<SingleServerDetail>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Last message: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+				</SingleServerDetailStyled>
+				<SingleServerDetailStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Last message: </SingleServerDetailTitleStyled>
 						{server.lastMessage}
-					</SingleServerDetailBlock>
-					<SingleServerDetailBlock>
-						<SingleServerDetailTitle>Location: </SingleServerDetailTitle>
+					</SingleServerDetailBlockStyled>
+					<SingleServerDetailBlockStyled>
+						<SingleServerDetailTitleStyled>Location: </SingleServerDetailTitleStyled>
 						{server.location}
-					</SingleServerDetailBlock>
-				</SingleServerDetail>
-			</SingleServerDetailWrapper>
+					</SingleServerDetailBlockStyled>
+				</SingleServerDetailStyled>
+			</SingleServerDetailWrapperStyled>
 
-			<StyledPopupTitle>Server location</StyledPopupTitle>
+			<PopupTitleStyled>Server location</PopupTitleStyled>
 
-			<GoogleMap ref={googleMapRef}/>
+			<GoogleMapStyled ref={googleMapRef}/>
 		</SingleServerStyled>
-	  </SingleServerContainer>
+	  </SingleServerContainerStyled>
 	)
   }

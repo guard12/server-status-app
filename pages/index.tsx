@@ -1,10 +1,11 @@
-
+import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Layout } from '../components/page/layout'
 
 const Title = styled(motion.div)`
 	color: ${({ theme }) => theme.colors.secondary};
+	padding: ${({ theme }) => theme.spacing.xl};
 	text-align: center;
 `
 

@@ -1,27 +1,28 @@
-import { ServerContainer, ServerItem, Status, ServerItemContent, ServerItemContentDetail } from './styles'
+import React from 'react'
+import { ServerContainerStyled, ServerItemStyled, StatusStyled, ServerItemContentStyled, ServerItemContentDetailStyled } from './styles'
 import { ServerIcon } from '../icons/server-icon'
 
 export function ServerList({ items, setSelectedId }) {
 	return (
-		<ServerContainer>
+		<ServerContainerStyled>
 			{items.map((server) => (
-				<ServerItem
+				<ServerItemStyled
 					key={server.id}
 					onClick={() => setSelectedId(server.id)}
 					layoutId={server.id}
 				>
 				<div style={{ display: 'flex'}}>
 					<ServerIcon />
-					<ServerItemContent>
-						<ServerItemContentDetail><strong>Name:</strong> {server.name}</ServerItemContentDetail>
-						<ServerItemContentDetail><strong>Average uptime: </strong>{server.avgUptime}</ServerItemContentDetail>
-						<ServerItemContentDetail style={{display: "flex", alignItems: "baseline"}}>
-							<strong>Status:</strong> <Status status={server.status}/> {server.status}
-						</ServerItemContentDetail>
-					</ServerItemContent>
+					<ServerItemContentStyled>
+						<ServerItemContentDetailStyled><strong>Name:</strong> {server.name}</ServerItemContentDetailStyled>
+						<ServerItemContentDetailStyled><strong>Average uptime: </strong>{server.avgUptime}</ServerItemContentDetailStyled>
+						<ServerItemContentDetailStyled style={{display: "flex", alignItems: "baseline"}}>
+							<strong>Status:</strong> <StatusStyled status={server.status}/> {server.status}
+						</ServerItemContentDetailStyled>
+					</ServerItemContentStyled>
 				</div>
-				</ServerItem>
+				</ServerItemStyled>
 			))}
-		</ServerContainer>
+		</ServerContainerStyled>
 		)
 }
