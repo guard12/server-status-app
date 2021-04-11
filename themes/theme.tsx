@@ -8,10 +8,12 @@ const spacing = {
 
 const darkTheme = {
     colors: {
-      primary: '#242423',
+      primary: '#242526',
       secondary: '#fff',
-      background: '#312F2F',
+      background: '#18191a',
       borderColor: '#eaeaea',
+      hoverColor: '#3a3b3c',
+      activeColor: '#2d88ff'
     },
     spacing: { ...spacing },
 }
@@ -22,7 +24,8 @@ const lightTheme = {
         secondary: '#242423',
         background: '#fff',
         borderColor: '#eaeaea',
-        hoverColor: '#e2dddd'
+        hoverColor: '#e2dddd',
+        activeColor: '#2d88ff'
     },
     spacing: { ...spacing },
 }

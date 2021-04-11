@@ -4,6 +4,7 @@ import { StoreProvider } from 'easy-peasy'
 
 import { store } from '../store/store' 
 import { darkTheme, lightTheme } from '../themes/theme'
+import { useDarkMode } from '../hooks/useDarkMode'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -20,10 +21,12 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default function App({ Component, pageProps }) {
+	const { isDarkMode } = useDarkMode()
+
 	return (
 		<AnimateSharedLayout>
 			<GlobalStyle />
-			<ThemeProvider theme={lightTheme}>
+			<ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
 				<StoreProvider store={store}>
 					<Component {...pageProps} />
 				</StoreProvider>

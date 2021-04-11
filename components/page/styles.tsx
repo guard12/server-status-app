@@ -7,7 +7,6 @@ export const NavBarWrapperStyled = styled.header`
     width: 100%;
     display: flex;
     z-index: 1000;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
 `
 
 export const NavBarComponentStyled = styled.nav`
@@ -23,16 +22,17 @@ interface LinkStyledProps {
 
 export const LinkStyled = styled.div<LinkStyledProps>`
     cursor: pointer;
-    color: ${(props) => props.active ? props.theme.colors.primary : props.theme.colors.secondary};
-    background-color: ${(props) => props.active ? props.theme.colors.secondary : props.theme.colors.primary};
+    color: ${(props) => props.active ? props.theme.colors.activeColor : props.theme.colors.secondary};
+    background-color: ${(props) => props.theme.colors.priamry };
     flex: 1;
     height: 100%;
 	justify-content: center;
 	display: flex;
 	align-items: center;
+    border-bottom: 1px solid ${(props) => props.active ? props.theme.colors.activeColor : 'none'};
     &:hover {
-        background-color: ${({ theme }) => theme.colors.hoverColor};
-        color: ${({ theme }) => theme.colors.secondary};
+        background-color: ${(props) => props.active ? 'none' : props.theme.colors.hoverColor};
+        color: ${(props) => props.active ? 'none' : props.theme.colors.secondary};
     }
 `
 
@@ -45,7 +45,6 @@ export const FooterStyled = styled.footer`
     height: 48px;
     background: ${({ theme }) => theme.colors.primary};
     display: flex;
-    border-top: 1px solid ${({ theme }) => theme.colors.borderColor};
     color: ${({ theme }) => theme.colors.secondary};    
 `
 export const PageStyled = styled.div`

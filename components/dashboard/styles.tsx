@@ -23,8 +23,11 @@ export const ServerItemStyled = styled(motion.li)`
 	padding: 20px;
 	cursor: pointer;
 	flex: 1 0 20%;
-	background: ${({ theme }) => theme.colors.secondary};
-	color: ${({ theme }) => theme.colors.primary};
+	background: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.secondary};
+	&:hover {
+        background-color: ${({ theme }) => theme.colors.hoverColor};
+    }
 `
 
 export const ServerItemContentStyled = styled.div`
@@ -64,8 +67,8 @@ export const SingleServerContainerStyled = styled(motion.div)`
 
 export const SingleServerStyled = styled(motion.div)`
 	border-radius: 20px;
-	background: ${({ theme }) => theme.colors.secondary};
-	color: ${({ theme }) => theme.colors.primary};
+	background: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.secondary};
     padding: ${({ theme }) => theme.spacing.xl};
 	z-index: 50;
 	max-width: 1280px;
@@ -131,7 +134,7 @@ export const GoogleMapStyled = styled.div`
 `
 
 export const ClosePopupButtonStyled = styled.span`
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.secondary};
 	cursor: pointer;
 	float: right;
 	font-size: 28px;
@@ -142,7 +145,7 @@ export const ClosePopupButtonStyled = styled.span`
 `
 
 export const PopupTitleStyled = styled.div`
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.secondary};
 	text-align: center;
 	font-size: 28px;
 	font-weight: bold;

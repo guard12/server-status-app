@@ -5,7 +5,7 @@ export const AddServerButtonStyled = styled.button`
 	color: ${({ theme }) => theme.colors.secondary};
 	font-size: 1em;
 	padding: 0.25em 1em;
-	border: 2px solid ${({ theme }) => theme.colors.secondary};
+	border: 1px solid ${({ theme }) => theme.colors.secondary};
 	border-radius: 3px;
 	cursor: pointer;
 	width: 200px;
